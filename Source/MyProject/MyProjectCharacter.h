@@ -7,7 +7,10 @@ UCLASS(config=Game)
 class AMyProjectCharacter : public ACharacter
 {
 	GENERATED_BODY()
-
+/*Creates the collision circle for checking collision for edge detection*/
+	UPROPERTY(EditAnywhere, category = collision)
+	USphereComponent* CollisionCircle;
+	
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;

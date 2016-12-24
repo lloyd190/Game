@@ -101,6 +101,8 @@ void AMyProjectCharacter::LookUpAtRate(float Rate)
 
 void AMyProjectCharacter::MoveForward(float Value)
 {
+	FVector socketLocation = GetMesh()->GetSocketLocation("Foot-left");
+	GLog->Log(socketLocation.ToString());
 	if ((Controller != NULL) && (Value != 0.0f))
 	{
 		// find out which way is forward
