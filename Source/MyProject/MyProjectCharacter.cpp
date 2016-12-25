@@ -12,6 +12,12 @@ AMyProjectCharacter::AMyProjectCharacter()
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
+
+	/*Creates the collision circle, sets size and attaches it to the RootComponent. This collisionCircle is used for edge detection*/
+	CollisionCircle = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionSphere"));
+	CollisionCircle->SetWorldScale3D(FVector(5.0f,5.0f,5.0f));
+	CollisionCircle->AttachTo(GetRootComponent());
+	CollisionCircle->SnapTo(GetRootComponent());
 	// set our turn rates for input
 	BaseTurnRate = 45.f;
 	BaseLookUpRate = 45.f;
